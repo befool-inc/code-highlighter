@@ -14,6 +14,7 @@ begin require 'octopress-ink'
 rescue LoadError; end
 
 require 'octopress-code-highlighter/cache'
+require 'octopress-code-highlighter/formatter'
 
 module Octopress
   module CodeHighlighter

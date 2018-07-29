@@ -104,6 +104,7 @@ module Octopress
       def render_rouge
         if lexer = Rouge::Lexer.find(lang) || Rouge::Lexer.find(@aliases[lang])
           formatter = ::Rouge::Formatters::HTML.new(wrap: false)
+          formatter = Formatter.new(formatter)
           formatter.format(lexer.lex(@code))
         else
           render_plain
